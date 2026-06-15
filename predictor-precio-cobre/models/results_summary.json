@@ -1,16 +1,65 @@
 {
-  "best_model": "Linear Regression",
-  "test_mae": 0.016909662176084812,
-  "test_rmse": 0.032599328241334935,
-  "test_r2": 0.992296809974852,
-  "test_mape": 0.36810984390331786,
-  "train_size": 3097,
-  "val_size": 387,
-  "test_size": 388,
-  "num_features": 42,
-  "arima_order": [
-    5,
-    1,
-    2
-  ]
+  "sklearn_version": "1.9.0",
+  "fecha_reentrenamiento": "2026-06-15T14:49:37",
+  "datos_crudos": {
+    "filas": 4137,
+    "desde": "2010-01-04",
+    "hasta": "2026-06-15"
+  },
+  "features": {
+    "total": 29,
+    "lista": [
+      "year",
+      "month",
+      "day",
+      "dayofweek",
+      "quarter",
+      "is_month_start",
+      "is_month_end",
+      "lag_1",
+      "lag_2",
+      "lag_3",
+      "lag_7",
+      "lag_14",
+      "lag_30",
+      "rolling_mean_7",
+      "rolling_std_7",
+      "rolling_min_7",
+      "rolling_max_7",
+      "rolling_mean_30",
+      "rolling_std_30",
+      "rolling_min_30",
+      "rolling_max_30",
+      "rolling_mean_90",
+      "rolling_std_90",
+      "rolling_min_90",
+      "rolling_max_90",
+      "price_diff",
+      "price_pct_change",
+      "volatility_7d",
+      "volatility_30d"
+    ]
+  },
+  "split": {
+    "train": 3237,
+    "val": 404,
+    "test": 406
+  },
+  "ridge": {
+    "alpha": 0.1,
+    "test_metrics": {
+      "mae": 0.07319083535271734,
+      "rmse": 0.11690373216191041,
+      "r2": 0.9703560321462444,
+      "mape_pct": 1.430778447836089
+    }
+  },
+  "linear_regression": {
+    "test_metrics": {
+      "mae": 0.07365769793064979,
+      "rmse": 0.11725581275295856,
+      "r2": 0.9701772049649828,
+      "mape_pct": 1.4396723051705824
+    }
+  }
 }

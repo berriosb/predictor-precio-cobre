@@ -83,7 +83,9 @@ def create_rolling_features(
     }
 
     for window in windows:
-        rolling_window = df_copy[column].rolling(window=window)
+        # shift(1) para evitar data leakage: las rolling stats del dia T
+        # solo deben mirar hacia el pasado (no incluir el precio de T).
+        rolling_window = df_copy[column].shift(1).rolling(window=window)
         for stat in stats:
             if stat in stat_funcs:
                 df_copy[f'rolling_{stat}_{window}'] = getattr(rolling_window, stat_funcs[stat])()
@@ -143,13 +145,13 @@ def create_trend_features(
     """
     df_copy = df.copy()
 
-    # Diferencia dia a dia
-    df_copy['price_diff'] = df_copy[column].diff()
+    # Diferencia dia a dia (con shift para evitar leakage: usa precio de T-1 vs T-2)
+    df_copy['price_diff'] = df_copy[column].shift(1).diff()
 
-    # Cambio porcentual (retorno)
-    df_copy['price_pct_change'] = df_copy[column].pct_change() * 100
+    # Cambio porcentual (retorno) - mismo principio
+    df_copy['price_pct_change'] = df_copy[column].shift(1).pct_change() * 100
 
-    # Volatilidad: desviacion estandar de los retornos
+    # Volatilidad: desviacion estandar de los retornos (ya shifted)
     df_copy['volatility_7d'] = df_copy['price_pct_change'].rolling(window=7).std()
     df_copy['volatility_30d'] = df_copy['price_pct_change'].rolling(window=30).std()
 
