@@ -10,8 +10,11 @@ dist/
 downloads/
 eggs/
 .eggs/
+# Source lib dirs for Python packaging; ignore but allow web/src/lib (Next.js app) below.
 lib/
+!web/src/lib/
 lib64/
+
 parts/
 sdist/
 var/
@@ -88,3 +91,7 @@ config_local.yaml
 
 # Streamlit secrets
 predictor-precio-cobre/.streamlit/secrets.toml
+
+.pnpm-store/
+.next/
+out/
