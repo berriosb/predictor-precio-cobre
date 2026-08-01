@@ -5,7 +5,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15-000?logo=nextdotjs&logoColor=white)](https://nextjs.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> **Demo editorial en vivo:** [predictor-precio-cobre.vercel.app](https://predictor-precio-cobre.vercel.app) — *Predecir menos. Demostrar más.*
+> **Demo editorial en vivo:** [web-theta-teal-22.vercel.app](https://web-theta-teal-22.vercel.app) — *Predecir menos. Demostrar más.*
 
 Sistema de Machine Learning para predecir el precio diario del cobre (USD/lb) mediante series temporales, feature engineering y validación walk-forward, con un dashboard Next.js que comunica los resultados con honestidad analítica.
 
@@ -40,7 +40,7 @@ El dashboard publica el benchmark completo con baseline naïve explícito en lug
 
 ## Demo Interactiva
 
-**[Abrir el dashboard editorial](https://predictor-precio-cobre.vercel.app)**
+**[Abrir el dashboard editorial](https://web-theta-teal-22.vercel.app)**
 
 Incluye:
 
