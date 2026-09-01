@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2eee5"/>
+      <stop offset="100%" stop-color="#e8e1d2"/>
+    </linearGradient>
+    <linearGradient id="copper-area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a64b2a" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#a64b2a" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grain" patternUnits="userSpaceOnUse" width="180" height="180">
+      <rect width="180" height="180" filter="url(#n)" opacity="0.06"/>
+    </pattern>
+    <filter id="n">
+      <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="3" stitchTiles="stitch"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grain)"/>
+  <rect x="0" y="0" width="6" height="630" fill="#a64b2a"/>
+
+  <g font-family="ui-monospace, SFMono-Regular, monospace" fill="#a64b2a" letter-spacing="3">
+    <text x="72" y="92" font-size="18" font-weight="500">CASO DE ESTUDIO · FORECASTING 1 DÍA</text>
+  </g>
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#1e211f">
+    <text x="72" y="172" font-size="76" font-weight="600" letter-spacing="-2">Cobre / Forecast Lab</text>
+    <text x="72" y="232" font-size="32" font-weight="600" fill="#696b65" font-style="italic">Predecir menos. Demostrar más.</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" fill="#1e211f" font-size="22">
+    <text x="72" y="296">15 años de precio diario HG=F · walk-forward honesto</text>
+    <text x="72" y="326" fill="#696b65">Ridge frente a persistencia naïve · 5 ventanas anuales</text>
+  </g>
+
+  <g transform="translate(72, 380)">
+    <rect x="0" y="0" width="1056" height="170" fill="#faf8f3" stroke="#d8d1c5"/>
+    <path d="M0,140 L40,120 L80,130 L120,90 L160,100 L200,60 L240,80 L280,50 L320,70 L360,40 L400,55 L440,30 L480,45 L520,25 L560,40 L600,20 L640,35 L680,15 L720,30 L760,50 L800,30 L840,55 L880,40 L920,70 L960,50 L1000,85 L1040,65 L1056,75 L1056,170 L0,170 Z"
+          fill="url(#copper-area)"/>
+    <path d="M0,140 L40,120 L80,130 L120,90 L160,100 L200,60 L240,80 L280,50 L320,70 L360,40 L400,55 L440,30 L480,45 L520,25 L560,40 L600,20 L640,35 L680,15 L720,30 L760,50 L800,30 L840,55 L880,40 L920,70 L960,50 L1000,85 L1040,65 L1056,75"
+          fill="none" stroke="#1e211f" stroke-width="2.5"/>
+    <g font-family="ui-monospace, monospace" font-size="13" fill="#696b65">
+      <text x="0" y="186">2010</text>
+      <text x="980" y="186">2026</text>
+    </g>
+  </g>
+
+  <g font-family="ui-sans-serif, system-ui, sans-serif" fill="#1e211f">
+    <text x="72" y="588" font-size="20" font-weight="600">predictor-precio-cobre.vercel.app</text>
+    <text x="1128" y="588" font-size="18" fill="#696b65" text-anchor="end" font-family="ui-monospace, monospace">Bastian Berrios · 2026</text>
+  </g>
+</svg>

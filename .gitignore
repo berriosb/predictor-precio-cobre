@@ -95,3 +95,4 @@ predictor-precio-cobre/.streamlit/secrets.toml
 .pnpm-store/
 .next/
 out/
+.vercel

@@ -8,8 +8,8 @@ const points: PricePoint[] = [
 ];
 
 const rows: ValidationRow[] = [
-  { year: "2023", ridgeMae: 0.03, naiveMae: 0.04, r2: 0.9, mape: 1 },
-  { year: "2024", ridgeMae: 0.05, naiveMae: 0.04, r2: 0.8, mape: 2 },
+  { year: "2023", ridgeMae: 0.03, naiveMae: 0.04, r2: 0.9, mape: 1, trainRows: 100, testRows: 50, rmse: 0.04, testStart: "2023-01-01", testEnd: "2023-12-31" },
+  { year: "2024", ridgeMae: 0.05, naiveMae: 0.04, r2: 0.8, mape: 2, trainRows: 150, testRows: 50, rmse: 0.06, testStart: "2024-01-01", testEnd: "2024-12-31" },
 ];
 
 describe("dashboard helpers", () => {
@@ -28,6 +28,7 @@ describe("dashboard helpers", () => {
     expect(result.naiveWins).toBe(1);
     expect(result.averageR2).toBeCloseTo(0.85);
     expect(result.averageMape).toBeCloseTo(1.5);
+    expect(result.averageMae).toBeCloseTo(0.04);
   });
 
   it("builds a finite SVG path", () => {

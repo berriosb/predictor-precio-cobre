@@ -2948,40 +2948,66 @@
       "ridgeMae": 0.0298,
       "naiveMae": 0.0291,
       "r2": 0.9888,
-      "mape": 1.08
+      "mape": 1.08,
+      "trainRows": 2423,
+      "testRows": 253,
+      "rmse": 0.039,
+      "testStart": "2020-01-01",
+      "testEnd": "2020-12-31"
     },
     {
       "year": "2021",
       "ridgeMae": 0.0535,
       "naiveMae": 0.0544,
       "r2": 0.9377,
-      "mape": 1.25
+      "mape": 1.25,
+      "trainRows": 2676,
+      "testRows": 252,
+      "rmse": 0.0706,
+      "testStart": "2021-01-01",
+      "testEnd": "2021-12-31"
     },
     {
       "year": "2022",
       "ridgeMae": 0.0542,
       "naiveMae": 0.0541,
       "r2": 0.9782,
-      "mape": 1.36
+      "mape": 1.36,
+      "trainRows": 2928,
+      "testRows": 251,
+      "rmse": 0.0705,
+      "testStart": "2022-01-01",
+      "testEnd": "2022-12-31"
     },
     {
       "year": "2023",
       "ridgeMae": 0.0381,
       "naiveMae": 0.0386,
       "r2": 0.9271,
-      "mape": 0.99
+      "mape": 0.99,
+      "trainRows": 3179,
+      "testRows": 251,
+      "rmse": 0.0488,
+      "testStart": "2023-01-01",
+      "testEnd": "2023-12-31"
     },
     {
       "year": "2024",
       "ridgeMae": 0.0474,
       "naiveMae": 0.0462,
       "r2": 0.9551,
-      "mape": 1.1
+      "mape": 1.1,
+      "trainRows": 3430,
+      "testRows": 252,
+      "rmse": 0.064,
+      "testStart": "2024-01-01",
+      "testEnd": "2024-12-31"
     }
   ],
   "metrics": {
     "averageR2": 0.9574,
     "averageMape": 1.16,
+    "averageMae": 0.0445,
     "ridgeWins": 2,
     "naiveWins": 3,
     "features": 29,

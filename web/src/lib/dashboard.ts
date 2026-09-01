@@ -5,21 +5,28 @@ export type ValidationRow = {
   naiveMae: number;
   r2: number;
   mape: number;
+  trainRows: number;
+  testRows: number;
+  rmse: number;
+  testStart: string;
+  testEnd: string;
+};
+export type DashboardMetrics = {
+  averageR2: number;
+  averageMape: number;
+  averageMae: number;
+  ridgeWins: number;
+  naiveWins: number;
+  features: number;
+  records: number;
+  alpha: number;
 };
 export type DashboardData = {
   generatedFrom: Record<string, string>;
   latest: PricePoint;
   history: PricePoint[];
   walkForward: ValidationRow[];
-  metrics: {
-    averageR2: number;
-    averageMape: number;
-    ridgeWins: number;
-    naiveWins: number;
-    features: number;
-    records: number;
-    alpha: number;
-  };
+  metrics: DashboardMetrics;
 };
 
 export type RangeKey = "2Y" | "5Y" | "10Y" | "ALL";
@@ -47,6 +54,7 @@ export function summary(rows: ValidationRow[]) {
     naiveWins: rows.length - ridgeWins,
     averageR2: rows.reduce((sum, row) => sum + row.r2, 0) / rows.length,
     averageMape: rows.reduce((sum, row) => sum + row.mape, 0) / rows.length,
+    averageMae: rows.reduce((sum, row) => sum + (row.ridgeMae + row.naiveMae) / 2, 0) / rows.length,
   };
 }
 
