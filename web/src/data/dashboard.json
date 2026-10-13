@@ -1,8 +1,8 @@
 {
   "generatedFrom": {
-    "processed": "predictor-precio-cobre/data/processed/precio_cobre_features.csv",
-    "walkForward": "predictor-precio-cobre/reports/walk_forward_results.csv",
-    "summary": "predictor-precio-cobre/models/results_summary.json"
+    "processed": "data/processed/precio_cobre_features.csv",
+    "walkForward": "reports/walk_forward_results.csv",
+    "summary": "models/results_summary.json"
   },
   "latest": {
     "date": "2026-06-15",
