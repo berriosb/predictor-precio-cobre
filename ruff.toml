@@ -1,0 +1,35 @@
+# Configuracion de ruff para el pipeline Python.
+#
+# El proyecto no tenia linter configurado. Estas reglas reflejan las
+# convenciones que el codigo ya sigue, no un ideal aspiracional: no se
+# activan las reglas de modernizacion (UP*) porque adoptar `X | None`
+# sobre `Optional[X]` en todo el arbol es un refactor propio, no un
+# gate de pre-push.
+#
+# Objetivo: catching de errores reales (imports muertos, redefiniciones,
+# variables sin usar, errores de sintaxis), no reescritura de estilo.
+
+target-version = "py311"
+
+exclude = [
+    ".venv",
+    "node_modules",
+    "web",
+    ".next",
+]
+
+[lint]
+# Equivalente al default clasico de ruff: errores de sintaxis/imports.
+select = ["E4", "E7", "E9", "F"]
+
+ignore = [
+    # f-string sin placeholders. Es cosmetico y aparece en codigo que ya
+    # funciona; adoptarlo es un cambio de estilo, no una correccion.
+    "F541",
+]
+
+[lint.per-file-ignores]
+# Los notebooks declaran imports para demostrar disponibilidad de libs
+# aunque despues no los usen en la celda; removerlos rompe la intencion
+# pedagogica del analisis exploratorio.
+"notebooks/*" = ["E402", "F401", "F811", "F841"]
