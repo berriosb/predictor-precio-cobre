@@ -178,9 +178,15 @@ def validate_data(df: pd.DataFrame) -> Tuple[bool, list]:
 
     # Verificar columnas requeridas
     columnas_requeridas = ['fecha', 'precio_cobre_usd_lb']
-    for col in columnas_requeridas:
-        if col not in df.columns:
-            errores.append(f"Falta la columna requerida: {col}")
+    faltantes = [col for col in columnas_requeridas if col not in df.columns]
+    for col in faltantes:
+        errores.append(f"Falta la columna requerida: {col}")
+
+    # Sin las columnas base las comprobaciones de abajo no se pueden hacer:
+    # acceden a df['precio_cobre_usd_lb'] y df['fecha'] directamente y
+    # reventarian con KeyError en vez de reportar el problema.
+    if faltantes:
+        return False, errores
 
     # Verificar que haya suficientes datos
     if len(df) < 100:
