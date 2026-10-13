@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  web:
+    name: Frontend (lint, typecheck, test, build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
+
+      - name: Build
+        run: pnpm build
+
+      # `defaults.run.working-directory` es web/, asi que las rutas van relativas ahi.
+      - name: Verify export is reproducible
+        run: git diff --exit-code src/data/dashboard.json public/cobre-hgf.csv
+
+  python-manifest:
+    name: Python deps declaradas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # No instala el pipeline: solo verifica por AST que todo import de
+      # terceros en src/ y app.py este declarado en requirements.txt.
+      # Este guard habria detectado el hueco de statsmodels que rompia retrain.py.
+      - name: Check third-party imports against requirements.txt
+        run: python3 .github/scripts/check_python_deps.py
