@@ -3,7 +3,6 @@ Reentrena el modelo Ridge con los datos crudos + features regeneradas,
 y persiste el .pkl compatible con la sklearn instalada.
 
 Uso:
-    cd predictor-precio-cobre
     python src/retrain.py
 
 Salida:

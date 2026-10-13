@@ -13,12 +13,11 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MODEL_ROOT = ROOT / "predictor-precio-cobre"
 DASHBOARD_JSON = ROOT / "web" / "src" / "data" / "dashboard.json"
 PUBLIC_CSV = ROOT / "web" / "public" / "cobre-hgf.csv"
-PROCESSED = MODEL_ROOT / "data" / "processed" / "precio_cobre_features.csv"
-WALK_FORWARD = MODEL_ROOT / "reports" / "walk_forward_results.csv"
-SUMMARY = MODEL_ROOT / "models" / "results_summary.json"
+PROCESSED = ROOT / "data" / "processed" / "precio_cobre_features.csv"
+WALK_FORWARD = ROOT / "reports" / "walk_forward_results.csv"
+SUMMARY = ROOT / "models" / "results_summary.json"
 
 WINDOWS = [
     ("2020-01-01", "2020-12-31"),

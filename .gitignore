@@ -29,41 +29,41 @@ wheels/
 notebooks/data
 notebooks/cifar_net.pth
 
-# Datos - predictor-precio-cobre
-predictor-precio-cobre/data/raw/*.csv
-predictor-precio-cobre/data/processed/*.csv
-predictor-precio-cobre/data/raw/*.xlsx
-predictor-precio-cobre/data/processed/*.xlsx
-predictor-precio-cobre/data/raw/*.json
-predictor-precio-cobre/data/processed/*.json
+# Datos
+data/raw/*.csv
+data/processed/*.csv
+data/raw/*.xlsx
+data/processed/*.xlsx
+data/raw/*.json
+data/processed/*.json
 # Excepciones: mantener archivos pequeños de metadata
-!predictor-precio-cobre/data/processed/features_summary.csv
-!predictor-precio-cobre/data/processed/model_comparison_all.csv
-!predictor-precio-cobre/data/processed/precio_cobre_features.csv
-!predictor-precio-cobre/data/**/.gitkeep
+!data/processed/features_summary.csv
+!data/processed/model_comparison_all.csv
+!data/processed/precio_cobre_features.csv
+!data/**/.gitkeep
 
-# Modelos entrenados - predictor-precio-cobre
-predictor-precio-cobre/models/*.pkl
-predictor-precio-cobre/models/*.joblib
-predictor-precio-cobre/models/*.h5
-predictor-precio-cobre/models/*.pt
+# Modelos entrenados
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.pt
 # Excepciones: mantener modelos pequeños y CSVs
-!predictor-precio-cobre/models/ridge_model.pkl
-!predictor-precio-cobre/models/linear_regression.pkl
-!predictor-precio-cobre/models/best_model.pkl
-!predictor-precio-cobre/models/feature_names.pkl
-!predictor-precio-cobre/models/*.csv
-!predictor-precio-cobre/models/*.json
-!predictor-precio-cobre/models/.gitkeep
+!models/ridge_model.pkl
+!models/linear_regression.pkl
+!models/best_model.pkl
+!models/feature_names.pkl
+!models/*.csv
+!models/*.json
+!models/.gitkeep
 
-# Reportes - predictor-precio-cobre
-predictor-precio-cobre/reports/figures/*.png
-predictor-precio-cobre/reports/figures/*.jpg
-predictor-precio-cobre/reports/figures/*.pdf
+# Reportes
+reports/figures/*.png
+reports/figures/*.jpg
+reports/figures/*.pdf
 # Excepciones: mantener visualizaciones clave (pequeñas)
-!predictor-precio-cobre/reports/figures/model_comparison_metrics.png
-!predictor-precio-cobre/reports/figures/predictions_comparison_all_models.png
-!predictor-precio-cobre/reports/**/.gitkeep
+!reports/figures/model_comparison_metrics.png
+!reports/figures/predictions_comparison_all_models.png
+!reports/**/.gitkeep
 
 # Entornos virtuales
 venv/
@@ -90,7 +90,7 @@ config_local.yaml
 .devcontainer/
 
 # Streamlit secrets
-predictor-precio-cobre/.streamlit/secrets.toml
+.streamlit/secrets.toml
 
 .pnpm-store/
 .next/
@@ -99,3 +99,15 @@ out/
 
 # Engram memory project marker
 .engram/
+
+# Reglas portadas del .gitignore interno de predictor-precio-cobre/
+# durante el aplanado (se eliminaron al fusionar los dos archivos).
+.ipynb_checkpoints/
+.profile.jupyter/
+Thumbs.db
+*.bak
+*.orig
+secrets.toml
+logs/
+tmp/
+scratch/

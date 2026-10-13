@@ -53,7 +53,7 @@ BASE = Path().resolve()
 if not (BASE / "data" / "processed" / "precio_cobre_features.csv").exists():
     BASE = BASE.parent
 if not (BASE / "data" / "processed" / "precio_cobre_features.csv").exists():
-    raise FileNotFoundError("Ejecutar desde la raiz del proyecto predictor-precio-cobre/")
+    raise FileNotFoundError("Ejecutar desde la raiz del proyecto")
 
 PROC_CSV = BASE / "data" / "processed" / "precio_cobre_features.csv"
 FIG_DIR = BASE / "reports" / "figures"
