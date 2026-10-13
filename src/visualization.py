@@ -11,13 +11,11 @@ Este modulo proporciona funciones estandarizadas para:
 """
 
 import os
-from typing import Optional, List, Dict
+from typing import Optional, Dict
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly.graph_objects as go
-import plotly.express as px
 from scipy import stats
 import yaml
 

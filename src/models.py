@@ -322,11 +322,15 @@ def predict_arima(
     return predictions.values
 
 
-def compare_models(
+def compare_models_from_metrics(
     metrics_dict: Dict[str, Dict[str, float]]
 ) -> pd.DataFrame:
     """
     Compara metricas de multiples modelos.
+
+    Antes se llamaba `compare_models`, pero ese nombre lo define mas abajo
+    `compare_models(models_dict, X_test, y_test)`, que la sombreaba en
+    silencio. Se renombra para que ambas coexistan.
 
     Args:
         metrics_dict: Diccionario con {nombre_modelo: {metrica: valor}}

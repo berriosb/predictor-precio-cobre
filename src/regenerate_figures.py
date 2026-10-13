@@ -18,10 +18,8 @@ import joblib
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import seaborn as sns
-import yaml
 
 warnings.filterwarnings("ignore")
 sns.set_theme(style="darkgrid", context="notebook")
@@ -125,7 +123,6 @@ def fig_predictions() -> None:
     b = a + int(n * 0.1)
     test = df.iloc[b:].copy()
     X_test = test[feature_cols]
-    y_test = test["precio_cobre_usd_lb"]
 
     test = test.assign(
         pred_ridge=ridge.predict(X_test),

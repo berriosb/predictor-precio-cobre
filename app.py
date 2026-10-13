@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import plotly.graph_objects as go
-from datetime import datetime, timedelta
+from datetime import timedelta
 from pathlib import Path
 import warnings
 warnings.filterwarnings('ignore')
