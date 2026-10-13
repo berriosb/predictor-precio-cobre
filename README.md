@@ -94,22 +94,24 @@ La web consume datos versionados del pipeline ML exportados vía `scripts/export
 ```
 predictor-precio-cobre/
 │
+├── app.py                          # App Streamlit heredada (no es la vía principal)
+│
 ├── data/
-│   ├── raw/                          # Datos descargados de Yahoo Finance (gitignored)
-│   └── processed/                    # Features generadas (gitignored)
+│   ├── raw/                         # Datos descargados de Yahoo Finance (gitignored)
+│   └── processed/                   # Features generadas (gitignored)
 │       └── precio_cobre_features.csv
 │
-├── docs/                             # Documentación interna
+├── docs/                            # Documentación interna
 │
-├── models/                           # Artefactos del modelo (gitignored)
+├── models/                          # Artefactos del modelo (gitignored)
 │   └── results_summary.json         # Métricas vigentes (incluidas)
 │
-├── notebooks/                        # Análisis exploratorio
+├── notebooks/                       # Análisis exploratorio
 │   └── 06_walk_forward_validation.py
 │
 ├── reports/
 │   ├── walk_forward_results.csv     # Métricas por ventana (incluido)
-│   └── figures/                      # Gráficos PNG generados
+│   └── figures/                     # Gráficos PNG generados
 │
 ├── scripts/
 │   └── export_web_data.py            # Exporter read-only a JSON para la web
@@ -132,20 +134,16 @@ predictor-precio-cobre/
 │   ├── package.json
 │   └── README.md
 │
-├── predictor-precio-cobre/           # Workspace interno del pipeline
-│   ├── app.py                        # App Streamlit heredada
-│   ├── src/                          # Módulos espejo
-│   ├── data/                         # Datos cacheados
-│   ├── models/                       # Modelos entrenados
-│   ├── notebooks/                    # Notebooks históricos
-│   └── reports/figures/              # PNGs ya generados
-│
 ├── config.yaml                       # Parámetros del pipeline
 ├── requirements.txt                  # Dependencias runtime Python
 ├── vercel.json                       # Config de deploy Vercel
 ├── LICENSE                           # MIT
 └── README.md                         # Este archivo
 ```
+
+> **Nota sobre `app.py`**: es la app Streamlit original. El flujo principal y el
+> documentado es el pipeline (`src/`) más el dashboard editorial (`web/`). Se conserva
+> por historial y porque es la única forma de explorar los `.pkl` interactivamente.
 
 ---
 
